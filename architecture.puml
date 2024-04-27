@@ -1,0 +1,25 @@
+@startuml Architecture
+package "Frontend (React)" {
+    component [Admin Page] as Admin
+    component [Events Listing Page] as Listing
+    component [Event Details Page] as Details
+}
+
+package "Backend (Node.js)" {
+    component [API Gateway] as API
+    component [Authentication Service] as Auth
+    component [Event Management Service] as EventMgmt
+}
+
+database "Database (MongoDB)" {
+    component [Users] as UsersDB
+    component [Events] as EventsDB
+}
+
+Auth --> API : Validates user and forwards to API
+Admin --> Auth : Create/Update events
+Listing --> Auth : Fetch all events
+Details --> Auth : Fetch event details
+API --> EventMgmt : Delegate event operations
+EventMgmt --> EventsDB : Manage event data operations
+@enduml

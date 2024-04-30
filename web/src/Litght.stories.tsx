@@ -39,7 +39,7 @@ export const Red: Story = {
 }
 
 export const Grouped: Story = {
-  render: (args) => (
+  render: (_args) => (
     <div
       style={{
         background: 'grey',

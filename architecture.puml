@@ -9,11 +9,15 @@ package "Backend (Node.js)" {
     component [API Gateway] as API
     component [Authentication Service] as Auth
     component [Event Management Service] as EventMgmt
+    component [User Managment Service] as UserMgmt
 }
 
-database "Database (MongoDB)" {
-    component [Users] as UsersDB
+database "EventDatabase (MongoDB)" {
     component [Events] as EventsDB
+}
+
+database "UserDatabase (MongoDB)" {
+    component [Users] as UsersDB
 }
 
 Auth --> API : Validates user and forwards to API
@@ -21,5 +25,7 @@ Admin --> Auth : Create/Update events
 Listing --> Auth : Fetch all events
 Details --> Auth : Fetch event details
 API --> EventMgmt : Delegate event operations
+API --> UserMgmt: CRUD user
 EventMgmt --> EventsDB : Manage event data operations
+UserMgmt --> UsersDB: Manage user data operation
 @enduml

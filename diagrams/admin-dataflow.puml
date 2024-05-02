@@ -1,0 +1,10 @@
+@startuml Admin Interaction Flow
+actor Admin
+
+Admin -> AdminForm : enters event details
+AdminForm -> AdminControls : input complete
+Admin -> AdminControls : initiates submit/update/delete
+AdminControls -> [Backend Server] : sends data
+[Backend Server] -> AdminControls : confirms operation
+
+@enduml

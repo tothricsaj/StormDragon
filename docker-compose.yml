@@ -20,6 +20,7 @@ services:
       - PORT=80
       - DBHOST=mongodb://db:27017
       - DBNAME=user-mgmt
+      - NODE_ENV=development
     depends_on:
       - SD-db
     restart: "no"

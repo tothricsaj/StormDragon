@@ -10,7 +10,7 @@ const meta: Meta<typeof Light> = {
   argTypes: {
     
   }
-}
+};
 
 export default meta;
 
@@ -20,13 +20,13 @@ export const Base: Story = {
   args: {
     variant: "green"
   }
-}
+};
 
 export const Yellow: Story = {
   args: {
     variant: "yellow"
   }
-}
+};
 
 /**
  * This is the red variant
@@ -36,7 +36,7 @@ export const Red: Story = {
   args: {
     variant: "red"
   }
-}
+};
 
 export const Grouped: Story = {
   render: (_args) => (
@@ -56,4 +56,4 @@ export const Grouped: Story = {
       <Light variant="green" />
     </div>
   )
-}
+};

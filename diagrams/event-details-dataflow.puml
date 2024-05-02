@@ -1,0 +1,9 @@
+@startuml Interaction Flow
+actor User
+
+User -> EventCard : clicks
+EventCard -> EventDetailsPage : navigate
+EventDetailsPage -> EventDetailsView : displays detailed information
+User -> BookingForm : submits application
+
+@enduml

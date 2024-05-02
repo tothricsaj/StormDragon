@@ -1,0 +1,30 @@
+@startuml Enhanced Architecture
+package "Frontend (React)" {
+    package "Shared Components" {
+        component Button
+        component Input
+        component Modal
+    }
+
+    package "Layout Components" {
+        component Header
+        component Footer
+        component NavBar
+    }
+
+    package "Page Components" {
+        package "Admin Page" {
+            component AdminForm
+            component AdminControls
+        }
+        package "Events Listing Page" {
+            component EventCard
+            component SearchBar
+        }
+        package "Event Details Page" {
+            component EventDetailsView
+            component BookingForm
+        }
+    }
+}
+@enduml

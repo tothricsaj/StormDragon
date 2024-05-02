@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  SD-db:
+    image: mongo:7.0.0
+    container_name: db
+    ports:
+      - "4000:27017"
+    restart: always
+
+  user-mgmt:
+    image: user-mgmt
+    build: 
+      context: ./user-mgmt
+      dockerfile: Dockerfile
+    container_name: user-mgmt
+    ports:
+      - "4002:80"
+    environment:
+      - PORT=80
+      - DBHOST=mongodb://db:27017
+      - DBNAME=user-mgmt
+    depends_on:
+      - SD-db
+    restart: "no"
